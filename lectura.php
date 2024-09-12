@@ -1,6 +1,6 @@
 <?php
 session_start();
-//Validamos los datos introducidos en index.
+//Validamos los datos introducidos en index.php
 if (!empty($_GET["email"]) && !empty($_GET["tlfno"]) && !empty($_GET["email2"]) && !empty($_GET["dni"])) {
     $dni = $_GET["dni"];
     $tlfno = $_GET["tlfno"];
@@ -64,7 +64,7 @@ if (!empty($_GET["email"]) && !empty($_GET["tlfno"]) && !empty($_GET["email2"]) 
     $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> Todos los datos son requeridos.</p>";
 }
 
-
+//Validamos los datos introducidos en Continuamos.php
 if (!empty($_GET["nombre"]) && !empty($_GET["edad"]) && !empty($_GET["apellido1"]) && !empty($_GET["apellido2"])) {
     $nombre = $_GET["nombre"];
     $apellido1 = $_GET["apellido1"];
@@ -80,8 +80,8 @@ if (!empty($_GET["nombre"]) && !empty($_GET["edad"]) && !empty($_GET["apellido1"
     }
 
     // Validamos que el nombre y apellidos no contengan números.
-    if (!is_string($nombre) || preg_match("/[0-9]/", $nombre)) {
-        $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> El nombre solo permite texto</p>";
+    if(empty($_POST["nombre"]) || !is_string($_POST["nombre"])){
+        $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> El nombre no es correcto.</p>";
     }
     if (!is_string($apellido1) || preg_match("/[0-9]/", $apellido1)) {
         $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> El apellido solo permite texto</p>";
@@ -89,6 +89,8 @@ if (!empty($_GET["nombre"]) && !empty($_GET["edad"]) && !empty($_GET["apellido1"
     if (!is_string($apellido2) || preg_match("/[0-9]/", $apellido2)) {
         $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> El apellido solo permite texto</p>";
     }
+
+
     if (count($errores) > 0) {
         for ($x = 0; $x < count($errores); $x++) {
             $cadena = $errores[$x];
@@ -104,9 +106,6 @@ if (!empty($_GET["nombre"]) && !empty($_GET["edad"]) && !empty($_GET["apellido1"
 }else{
     $errores[] = "<p style='color: darkred'><strong>ERROR:</strong> Todos los datos son requeridos.</p>";
 }
-
-
-
 
 
 // Creamos la funcion que se encargará de realizar la validacion de la letra del dni.
