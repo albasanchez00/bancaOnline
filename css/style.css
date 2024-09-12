@@ -1,0 +1,191 @@
+/* Estilos Generales */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    width: 100vw;
+}
+
+.textoCentrado{
+    text-align: center;
+}
+
+#bloque-general{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.verde{
+    color: #45BDA4;
+}
+
+.naranja{
+    color: #F9B801;
+    text-decoration: none;
+}
+
+h2{
+    font-size: 30px;
+    margin: 10px;
+}
+
+h3{
+    font-size: 24px;
+    margin: 10px;
+}
+
+
+/* Bloque Header */
+.logo{
+    display: block;
+    width: 250px;
+    height: auto;
+}
+img{
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+.header section{
+    width: 100vw;
+}
+.seccion{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+
+
+/* Body */
+/* Bloque Cabecera */
+.cabecera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 80%;
+    height: 150px;
+    color: white;
+}
+
+.iconos-header a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 70px;
+}
+
+.icono-naranja a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #F9B801;
+    font-size: 70px;
+}
+
+/* Bloque Formulario */
+#bloque-contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin: 20px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+p{
+    padding: 10px;
+}
+
+.bloque-datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bloque-datos p{
+    font-size: 12px;
+    color: #F2F2F2;
+}
+.datos{
+    border: none;
+}
+.datos{
+    width: 450px;
+    border-bottom: 2px solid #45BDA4;
+    height: 30px;
+}
+
+.contenido-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton {
+    text-align: center;
+    width: 100px;
+    height: 55px;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: #45BDA4;
+    color: white;
+    border-radius: 30%;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+
+/* Pagina Terminamos */
+#bloque-contenido2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    margin: 20px;
+}
+
+.texto-fin{
+    font-size: 16px;
+    width: 530px;
+    margin: 10px;
+}
+
+
+.politicas{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.politicas a{
+    color: #F9B801;
+}
