@@ -1,17 +1,20 @@
 <?php
 // Insertamos la cabecera
 include "header.php";
+
 ?>
 <section id="bloque-general">
     <section class="cabecera">
-        <div class="iconos-header">
-            <a href="">1<img src="media/flecha-derecha.svg" alt="flecha"></a>
+        <div class="iconos-header2">
+            <span>1<img src="media/flecha-derecha.svg" alt="flecha"></span>
         </div>
-        <div class="icono-naranja">
-            <a href="">2<img src="media/flecha-derecha.svg" alt="flecha"></a>
+
+        <div class="iconos-header2">
+            <span class="active">2<img src="media/flecha-derecha.svg" alt="flecha"></span>
         </div>
-        <div class="iconos-header">
-            <a href="">3</a>
+
+        <div class="iconos-header2">
+            <span>3</span>
         </div>
     </section>
 
@@ -19,11 +22,11 @@ include "header.php";
         <h2>Continuemos</h2>
         <p>Por favor, necesitamos más datos para completar el proceso:</p>
 
-        <form action="lectura.php">
+        <form action="lectura2.php" method="POST">
             <div class="contenido-form">
                 <div class="bloque-datos">
                     <label for="nombre"></label>
-                    <input class="datos" type="text" placeholder="NOMBRE" id="" name="" required>
+                    <input class="datos" type="text" placeholder="NOMBRE" id="nombre" name="nombre" required>
                     <p>Tu nombre</p>
                 </div>
 
@@ -36,9 +39,9 @@ include "header.php";
 
             <div class="contenido-form">
                 <div class="bloque-datos">
-                    <label for="edad"></label
-                    ><input class="datos" type="number" placeholder="EDAD" id="edad" name="edad">
-                    <p>Tu edad (minimo tener 18 años)</p>
+                    <label for="edad"></label>
+                    <input class="datos" type="number" placeholder="EDAD" id="edad" name="edad" required>
+                    <p>Tu edad (mínimo 18 años)</p>
                 </div>
 
                 <div class="bloque-datos">
@@ -48,13 +51,18 @@ include "header.php";
                 </div>
             </div>
 
-            <div class="politicas">
-                <!-- Cambiar el estado del submit, dependiendo si acepta la política de privacidad-->
-                <p><input type="checkbox" id="check">Acepta las <a href="htttps://agpd.es">Políticas de Privacidad</a></p>
+            <div class="contenido-politicas">
+                <div class="error-message">
+                    <?php
+                    if (isset($_GET["mensaje"])) {
+                        echo urldecode($_GET["mensaje"]); // Muestra los errores enviados desde PHP
+                    }
+                    ?>
+                </div>
             </div>
 
             <div>
-                <input class="boton" type="submit" value="Siguiente" disabled id="enviar">
+                <input class="boton" type="submit" value="Siguiente" id="enviar">
                 <input type="reset" value="Limpiar" class="boton">
             </div>
         </form>
